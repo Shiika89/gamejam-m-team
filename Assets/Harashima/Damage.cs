@@ -13,10 +13,10 @@ public class Damage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bullet")
-        {
+        {   
             //playerのHPからダメージ文を引く
             hp_jikken -= damage_jikken;
-            Debug.Log(hp_jikken);
+            Debug.Log("HP="+hp_jikken);
         }
     }
 }
