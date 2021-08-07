@@ -15,22 +15,25 @@ public class Player2Move : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal3");
+        float z = Input.GetAxis("Vertical3");
 
         if ((x != 0) || (z != 0))
         {
-            Debug.Log("stick:" + x + "," + z);
+            Debug.Log("Con:2 Lstick:" + x + "," + z);
         }
 
         pos += new Vector2(x * speed, z * speed);
-        transform.position = pos;
+        this.transform.position = pos;
 
-        if (Input.GetButtonDown("Player2Horizontal"))
+        float x2 = Input.GetAxis("Horizontal4");
+        float z2 = Input.GetAxis("Vertical4");
+
+        if ((x2 != 0) || (z2 != 0))
         {
-            Debug.Log("押された");
+            Debug.Log("Con:2 Rstick:" + x2 + "," + z2);
         }
     }
 }
