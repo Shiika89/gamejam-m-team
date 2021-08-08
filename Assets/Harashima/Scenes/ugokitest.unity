@@ -316,6 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   bom_damage: 1
+  damagesound: {fileID: 5965704373043405680, guid: a93ae1cd7695c724ebc89af2dc224770,
+    type: 3}
 --- !u!61 &423324583
 BoxCollider2D:
   m_ObjectHideFlags: 0

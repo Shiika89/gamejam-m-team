@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Harashima/Scenes/SceneConnect.unity
+    guid: 78978b9ee9d65c74d9f7eee497080898
+  - enabled: 1
+    path: Assets/Harashima/Scenes/ugokitest.unity
+    guid: 19db0d1f275458242b1362242959ff66
   m_configObjects: {}

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     //hpを他のスクリプトから持ってくる
-    int hp= 10;
+   int hp= 10;
     //ダメージいじれるようにする
     [SerializeField] int damage = 1;
     [SerializeField] int bom_damage = 1;
+    [SerializeField] GameObject damagesound;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,6 +19,12 @@ public class Damage : MonoBehaviour
             //playerのHPからダメージ文を引く
             hp -= damage;
             Debug.Log("HP="+hp);
+            
+                GameObject go = Instantiate(damagesound);
+                go.transform.position = this.transform.position;
+            
+            
+            
         }
 
         if (collision.gameObject.tag == "BombBullet")
@@ -25,6 +32,8 @@ public class Damage : MonoBehaviour
             //playerのHPからダメージ文を引く
             hp -= bom_damage;
             Debug.Log("HP=" + hp);
+            GameObject go = Instantiate(damagesound);
+            go.transform.position = this.transform.position;
         }
     }
 }
