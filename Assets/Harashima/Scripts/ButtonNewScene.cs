@@ -8,6 +8,6 @@ public class ButtonNewScene : MonoBehaviour
     // Start is called before the first frame update
     public void butt()
     {
-        SceneManager.LoadScene("ugokitest");
+        //SceneManager.LoadScene("ugokitest");
     }
 }
