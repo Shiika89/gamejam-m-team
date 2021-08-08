@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6740389718202690309}
   - component: {fileID: 6740389718202690330}
   - component: {fileID: 6740389718202690308}
+  - component: {fileID: 5245048071564201440}
+  - component: {fileID: 399425020793402067}
+  - component: {fileID: 7038036356714902565}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -73,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7521a013f6c8a2c4aaf01f68a5789396, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -216,7 +219,7 @@ MonoBehaviour:
     type: 3}
   m_moveSpeed: 5
   m_muzzle: {fileID: 6740389719728500159}
-  m_playerNumber: 0
+  m_playerNumber: 2
   m_fire: 0
   m_sprite1:
   - {fileID: 21300000, guid: 01386b6bb5ba1b14ab8533dd081d09a2, type: 3}
@@ -228,6 +231,53 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 840b6c2d9988f0d468f77108d384efd7, type: 3}
   - {fileID: 21300000, guid: d42e11f186dc9af4baf811c0eaa1dd4e, type: 3}
   - {fileID: 21300000, guid: e0544b914a69eca4ba81d901818648f8, type: 3}
+--- !u!70 &5245048071564201440
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740389718202690329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.31, y: 0.0001}
+  m_Direction: 0
+--- !u!114 &399425020793402067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740389718202690329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b63e9d17abafa149a320cb96052d60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  bom_damage: 1
+--- !u!114 &7038036356714902565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740389718202690329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4ce12398ed8474297f5db7f2c1f985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2_hp: 100
+  bakuhatu: {fileID: 0}
+  p1_win:
+  - {fileID: 4250143042802282296, guid: 853c5819e6cb83d45bb015ffd8cc8198, type: 3}
+  - {fileID: 7682624694942118323, guid: 2c31104e2b8cad140af91116921a93f8, type: 3}
 --- !u!1001 &9009693901005644073
 PrefabInstance:
   m_ObjectHideFlags: 0

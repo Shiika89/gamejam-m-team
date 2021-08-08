@@ -3,6 +3,9 @@
 public class P1win : MonoBehaviour
 {
 
+    Damage m_damage;
+    PlayerMove m_playMove;
+
     [SerializeField]
     private float player2_hp = 10;
 
@@ -10,23 +13,26 @@ public class P1win : MonoBehaviour
     GameObject bakuhatu = null;
 
     [SerializeField]
-    GameObject p1_win = null;
+    GameObject[] p1_win = null;
 
+    private void Start()
+    {
+        m_damage = GetComponent<Damage>();
+        m_playMove = GetComponent<PlayerMove>();
+    }
 
     void Update()
     {
-        if (player2_hp <= 0)
+        if (Damage.hp <= 0)
         {
-            if (bakuhatu)
+            if (m_playMove.m_playerNumber == 0)
             {
-                Instantiate(bakuhatu, this.transform.position, bakuhatu.transform.rotation);
+                Instantiate(p1_win[0], p1_win[0].transform.position, p1_win[0].transform.rotation);
             }
-            if (p1_win)
+            else
             {
-                Instantiate(p1_win, p1_win.transform.position, p1_win.transform.rotation);
+                Instantiate(p1_win[1], p1_win[1].transform.position, p1_win[1].transform.rotation);
             }
-            Destroy(this.gameObject);
-            
         }
 
     }

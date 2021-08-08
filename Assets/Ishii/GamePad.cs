@@ -7,6 +7,7 @@ public class GamePad : MonoBehaviour
 {
     [SerializeField] GameObject m_player;
     public IReadOnlyList<Gamepad> m_allGamepads = Gamepad.all;
+    [SerializeField] GameObject[] m_spown;
     PlayerMove m_playMove;
 
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class GamePad : MonoBehaviour
 
         for(int i = 0; i < m_allGamepads.Count; i++)
         {
-            GameObject Playerobj = Instantiate(m_player);
+            GameObject Playerobj = Instantiate(m_player, m_spown[i].transform.position, Quaternion.identity);
 
             Playerobj.GetComponent<PlayerMove>().m_gamepad = m_allGamepads[i];
             m_playMove.m_playerNumber++;

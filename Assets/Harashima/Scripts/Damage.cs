@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     //hpを他のスクリプトから持ってくる
-    int hp= 10;
+    [SerializeField] static public int hp= 30;
     //ダメージいじれるようにする
     [SerializeField] int damage = 1;
     [SerializeField] int bom_damage = 1;
@@ -17,14 +17,24 @@ public class Damage : MonoBehaviour
         {   
             //playerのHPからダメージ文を引く
             hp -= damage;
-            Debug.Log("HP="+hp);
+            Destroy(collision.gameObject);
+            Debug.Log(hp);
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
         if (collision.gameObject.tag == "BombBullet")
         {
             //playerのHPからダメージ文を引く
             hp -= bom_damage;
-            Debug.Log("HP=" + hp);
+            Destroy(collision.gameObject);
+            //Debug.Log(hp);
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
