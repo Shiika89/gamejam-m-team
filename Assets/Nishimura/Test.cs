@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip audioClip;
+
     [SerializeField] GameObject[] re;
     [SerializeField] GameObject[] tagObject;
     [SerializeField] GameObject bom;
 
     Transform pos;
-    [SerializeField] float time;
+    [SerializeField] float time = -5f;
     [SerializeField] float timeInterval = 5f;
     [SerializeField] float timeDecrease = 0.5f;
     [SerializeField] float lastTime = 2;
@@ -30,7 +33,7 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Check("Finish");
+        Check("Bomb");
 
         time += Time.deltaTime;
         if (timeInterval == lastTime && time > timeInterval)
@@ -55,6 +58,8 @@ public class Test : MonoBehaviour
         {
             pos = re[Random.Range(0, re.Length)].transform;
             GameObject a = Instantiate(bom, pos);
+            audioSource.PlayOneShot(audioClip);
+
         }
         //tagObject = GameObject.FindGameObjectsWithTag("Bom");
     }
